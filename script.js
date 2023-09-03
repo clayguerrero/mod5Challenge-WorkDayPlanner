@@ -1,5 +1,5 @@
 let saveBtn = $(".saveBtn");
-let textarea = $(".description");
+let textArea = $(".description");
 // let hour = $('#hour')
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -8,11 +8,9 @@ let textarea = $(".description");
 $(function () {
   $(saveBtn).on("click", function () {
     let hour = $(this).parent().attr("id");
-    // saveBtn.css("background-color" , "red")
-
-    // console.log($(this).parent().attr('id'))
-
-    console.log($(textarea.val()))
+    let userText = $(this).parent().find(textArea).val()
+    console.log(userText)
+    
   });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
