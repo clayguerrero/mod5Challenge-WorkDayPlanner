@@ -1,5 +1,5 @@
-let saveBtn = $(".saveBtn")
-let textarea = $(".description")
+let saveBtn = $(".saveBtn");
+let textarea = $(".description");
 // let hour = $('#hour')
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -7,16 +7,17 @@ let textarea = $(".description")
 // in the html.
 $(function () {
   $(saveBtn).on("click", function () {
-    let hour = $(this).parent()
-  // saveBtn.css("background-color" , "red")
-    console.log($(this).parent())
-  })
+    let hour = $(this).parent().attr("id");
+    // saveBtn.css("background-color" , "red")
+
+    // console.log($(this).parent().attr('id'))
+
+    console.log($(textarea.val()))
+  });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function?
-
-
 
   // How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
