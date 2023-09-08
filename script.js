@@ -7,7 +7,7 @@ let hour2 = $("#hour-2");
 let hour3 = $("#hour-3");
 let hour4 = $("#hour-4");
 let hour5 = $("#hour-5");
-
+let hour;
 let today = dayjs();
 let saveBtn = $(".saveBtn");
 let textArea = $(".description");
@@ -24,16 +24,16 @@ let currDate = $("#currentDay");
 // How can DOM traversal be used to get the "hour-x" id of the
 // time-block containing the button that was clicked? How might the id be
 // useful when saving the description in local storage?
-
-// TODO
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 // TODO: Add code to apply the past, present, or future class to each time
 // block by comparing the id to the current hour. HINTS: How can the id
 // attribute of each time-block be used to conditionally add or remove the
 // past, present, and future classes? How can Day.js be used to get the
 // current hour in 24-hour time?
+
+// TODO
+// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
+// the code isn't run until the browser has finished rendering all the elements
+// in the html.
 //
 // TODO: Add code to get any user input that was saved in localStorage and set
 // the values of the corresponding textarea elements. HINT: How can the id
@@ -49,7 +49,6 @@ $(function () {
   //     times.push(id);
   //   });
 
-
   $(".container-fluid")
     .children()
     .each(function (idx) {
@@ -60,25 +59,36 @@ $(function () {
         id = id.substring(5, 7);
       }
       if (id <= 5) {
-        id = parseInt(id, 10)
-        id+=12
+        id = parseInt(id, 10);
+        id += 12;
       }
       if (parseInt(currHour, 10) > parseInt(id, 10)) {
-        $(this).addClass('past');
-      } else if (parseInt(currHour,10) === parseInt(id,10)) {
-        $(this).removeClass('past')
+        $(this).removeClass("present");
+        $(this).removeClass("future")
+        $(this).addClass("past");
+      } else if (parseInt(currHour, 10) === parseInt(id, 10)) {
+        $(this).removeClass("future");
         $(this).addClass("present");
       } else {
-        $(this).addClass('future')
+        $(this).removeClass("present");
+        $(this).addClass("future");
       }
+      // console.log(currHour)
     });
 
   $(saveBtn).on("click", function () {
-    let hour = $(this).parent().attr("id");
+    hour = $(this).parent().attr("id");
     let userText = $(this).parent().find(textArea).val();
-    localStorage.setItem(hour, userText);
+    // localStorage.setItem(hour, userText);
+    localStorage.hour = userText;
+    console.log(localStorage.hour);
 
-    // console.log(localStorage);
+    // console.log(hour)
+    // console.log(localStorage.getItem(hour));
+    // console.log(localStorage.hour);
+    $(this).prev().innerHTML = localStorage.hour;
+    // console.log($(this).prev().val())
     // localStorage.clear()
   });
+  // textArea.innerHTml =  localStorage.getItem(hour)
 });
