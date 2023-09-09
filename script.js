@@ -30,4 +30,5 @@ $(function () {
       const userText = $(this).parent().find("textarea").val();
       localStorage[timeBlock]= userText
     });
+  // localStorage.clear()
 });
