@@ -11,3 +11,10 @@
 
 # Deployed App
 [link](https://clayguerrero.github.io/mod5Challenge-WorkDayPlanner/)
+
+# Helpful Links
+### Below are links and documentation to help understand some of the code I did not author as well as links that I found helpful.
+
+* [Day.js Format](https://day.js.org/docs/en/display/format)
+* [Day.js Calendar Time](https://day.js.org/docs/en/display/calendar-time)
+* [Setting value of textarea to localstorage](https://stackoverflow.com/a/42963316)
