@@ -10,7 +10,7 @@
 ![alt text](./Assets/completeApp.PNG)
 
 # Deployed App
-[link](https://clayguerrero.github.io/mod5Challenge-WorkDayPlanner/)
+[Completed application](https://clayguerrero.github.io/mod5Challenge-WorkDayPlanner/)
 
 # Helpful Links
 ### Below are links and documentation to help understand some of the code I did not author as well as links that I found helpful.
