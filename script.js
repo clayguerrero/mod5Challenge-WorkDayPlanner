@@ -21,14 +21,13 @@ $(function () {
       } else {
         $(this).removeClass("present").addClass("future");
       }
-      const time = $(this).attr('id');
-      const text = localStorage[time]
-      $(this).children('textarea').val(text)
+      const time = $(this).attr("id");
+      const text = localStorage[time];
+      $(this).children("textarea").val(text);
     });
-    $(saveBtn).on("click", function () {
-      timeBlock = $(this).parent().attr("id");
-      const userText = $(this).parent().find("textarea").val();
-      localStorage[timeBlock]= userText
-    });
-  // localStorage.clear()
+  $(saveBtn).on("click", function () {
+    timeBlock = $(this).parent().attr("id");
+    const userText = $(this).parent().find("textarea").val();
+    localStorage[timeBlock] = userText;
+  });
 });
